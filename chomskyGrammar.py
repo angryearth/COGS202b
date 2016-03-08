@@ -33,9 +33,9 @@ def NOUN_PHRASE(X):
 		NOUN(y)
 
 def ADJECTIVE(y):
-	adj = [' mean', ' old', ' dishonest', ' compassionate']
+	adj = [' mean', ' old', ' dishonest', ' compassionate', ' creepy', ' horny', ' angry', ' funny', ' sad']
 	x = random.choice(y)
-	print(random.choice(adj))
+	print(random.choice(adj),end="")
 	if x == 1:
 		ADJECTIVE(y)
 	else:
@@ -43,15 +43,15 @@ def ADJECTIVE(y):
 
 def NOUN(y):
 	n1 = [' Trump', ' Cruz', ' Sanders', ' Clinton']
-	n2 = [' people', ' guns', ' money', ' Constitution']
+	n2 = [' people', ' guns', ' money', ' Constitution', ' Military', ' Russia', ' Mexico', ' rapists', ' socialism']
 	x = random.choice(y)	
 	if x == 5:
 		x = random.choice(y)
 		if x  <= 2:
-			print(random.choice(n2) + ', that')				
+			print(random.choice(n2) + ', that',end="")				
 			VERB_PHRASE(y)
 		else:
-			print(random.choice(n1) + ', who')	
+			print(random.choice(n1) + ', who',end="")	
 			VERB_PHRASE(y)
 	elif x == 1:
 		x = random.choice(y)
@@ -61,19 +61,19 @@ def NOUN(y):
 			print(random.choice(n2) + '.' + '\n' + '\n')
 	else:
 		if x <= 3:
-			print(random.choice(n1))
+			print(random.choice(n1),end="")
 			VERB_PHRASE(y)
 		else:
-			print(random.choice(n2))
+			print(random.choice(n2),end="")
 			VERB_PHRASE(y)			
 
 def VERB_PHRASE(y):
-	VERB = [' hates', ' loves', ' criminalizes', ' defends']
+	VERB = [' hates', ' loves', ' criminalizes', ' defends', ' burns', ' assaults', ' murders', ' fucks', ' rapes', ' fracks', ' dreams of']
 	x = random.choice(y)
 	if x == 1:
 		print(random.choice(VERB) + '.' + '\n' + '\n')
 	else:
-		print(random.choice(VERB))
+		print(random.choice(VERB),end="")
 		NOUN_PHRASE(y)		
 
 i = 1
