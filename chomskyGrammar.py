@@ -27,6 +27,7 @@ def NOUN_PHRASE(X):
 	y = (1, 2, 3, 4, 5)
 	NP = random.choice(y)
 	if NP == 1:
+		# Noun_Phrase -> ADJECTIVE
 		ADJECTIVE(y)
 	else:
 		NOUN(y)
@@ -34,13 +35,13 @@ def NOUN_PHRASE(X):
 def ADJECTIVE(y):
 	adj = [' mean', ' old', ' dishonest', ' compassionate']
 	x = random.choice(y)
+	print(random.choice(adj))
 	if x == 1:
-		print(random.choice(adj))
 		ADJECTIVE(y)
 	else:
 		NOUN(y)
 
-def Noun(y):
+def NOUN(y):
 	n1 = [' Trump', ' Cruz', ' Sanders', ' Clinton']
 	n2 = [' people', ' guns', ' money', ' Constitution']
 	x = random.choice(y)	
@@ -59,21 +60,26 @@ def Noun(y):
 		else:
 			print(random.choice(n2) + '.' + '\n' + '\n')
 	else:
-		VERB_PHRASE(y)			
+		if x <= 3:
+			print(random.choice(n1))
+			VERB_PHRASE(y)
+		else:
+			print(random.choice(n2))
+			VERB_PHRASE(y)			
 
-def VERB_PHRASE(Y):
+def VERB_PHRASE(y):
 	VERB = [' hates', ' loves', ' criminalizes', ' defends']
 	x = random.choice(y)
 	if x == 1:
-		print(RANDOM.choice(VERB) + '.' + '\n' + '\n')
+		print(random.choice(VERB) + '.' + '\n' + '\n')
 	else:
-		print(RANDOM.choice(VERB))
+		print(random.choice(VERB))
 		NOUN_PHRASE(y)		
 
 i = 1
 
 # Derivation of 20 sentences 
-while i <= 2:
+while i <= 20:
 	SENTENCE(i)
 	i += 1
 
